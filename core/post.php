@@ -1,5 +1,5 @@
 <?php
-include "connect.php";
+
 //Post object
 class Post {
 	public $id;
@@ -46,7 +46,7 @@ class PostManager {
 	}
 }
 //////////////Running/////////
-$PostManager = new PostManager();
-$listPost = $PostManager->getAllPost();// array[Post] ex: $listPost[$index]->id ... $listPost[$index]->tieude
+//$PostManager = new PostManager();
+//$listPost = $PostManager->getAllPost();// array[Post] ex: $listPost[$index]->id ... $listPost[$index]->tieude
 
 ?>

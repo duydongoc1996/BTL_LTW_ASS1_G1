@@ -2,7 +2,7 @@
 //Session start
 //Object
 class Connection {
-	protected $con;	
+	public $con;	
 	//Constructor
 	public function __construct() {
 		$mysql_hostname = "localhost"; 			//Address Host 
@@ -19,7 +19,7 @@ class Connection {
 } //End Object
 
 //////////////Running/////////
-$connection = new Connection();
+//$GLOBALS['connection'] = new Connection();
 
 
 ?>
