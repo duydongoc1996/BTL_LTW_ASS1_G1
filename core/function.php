@@ -27,9 +27,14 @@ function signUp($username,$password,$repassword,$firstname,$lastname,$email) {
 	} else return false;
 }
 
-
 function checkLogin($username,$password) {
-	
+	$Manager = new UserManager();
+	$res = $Manager->getUser($username,$password);
+	if ($res==false) {
+		return false;
+	} else {
+		return true;
+	}
 	
 
 
@@ -44,7 +49,7 @@ function search($str){
 //var_dump(checkUsername($listUser,'aaaa'));
 //var_dump(checkUsernameExist(($GLOBALS['UserManager']->getAllUser()),'aaaaa'));
 //$email = '1	  abc@gmail.com';
-
+//var_dump((checkLogin('a','b')));
  
 
 ?>

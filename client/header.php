@@ -24,7 +24,7 @@
             <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">                    
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="/ass2/index.php">Trang chu</a>
                     </li>
                     <li class="nav-item">

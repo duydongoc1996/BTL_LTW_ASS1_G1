@@ -55,6 +55,31 @@ class UserManager {
 		//database working
 		array_splice($this->listUser,$index,1);
 	}
+	public function getUser($username,$password) {
+		//database working
+		$connection = new Connection();
+
+		$sql = "SELECT * FROM `user` WHERE `username`='$username' AND `password`='$password'";
+		$result = $connection->con->query($sql);
+
+		if ($result->num_rows > 0) {
+		    // output data of each row
+		    while($row = $result->fetch_assoc()) {
+		        $user = new User($row['username'],$row['password'],$row['email'],$row['session'],$row['firstname'],$row['lastname']);
+		       	//$this->addUser($user);
+		    }
+		    return $user;
+		} else {
+		    //echo "0 results";
+		    return false;
+		}
+
+
+
+
+	}
+
+
 	public function getAllUser() {
 		//database working
 		$connection = new Connection();
