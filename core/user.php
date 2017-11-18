@@ -1,4 +1,5 @@
 <?php
+include_once 'connect.php';
 
 //User object
 class User {
@@ -10,7 +11,7 @@ class User {
 	public $firstname;
 	public $lastname;
 
-	public $connection;
+	//public $connection;
 
 	public function __construct($USERNAME,$PASSWORD,$EMAIL,$SESSION,$FIRSTNAME,$LASTNAME) {
 		//$this->id=$ID;
@@ -60,7 +61,7 @@ class UserManager {
 		$connection = new Connection();
 
 		$sql = "SELECT * FROM `user` WHERE `username`='$username' AND `password`='$password'";
-		$result = $connection->con->query($sql);
+		$result = $connection->con->query($sql);	
 
 		if ($result->num_rows > 0) {
 		    // output data of each row

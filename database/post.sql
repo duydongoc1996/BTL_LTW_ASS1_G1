@@ -1,0 +1,1 @@
+CREATE TABLE `ass2_ltw`.`post` ( `id` INT NOT NULL AUTO_INCREMENT , `tieude` VARCHAR(50) NOT NULL , `tacgia` VARCHAR(50) NOT NULL , `dientich` INT(5) NOT NULL , `mota` TEXT NOT NULL , `diachi` VARCHAR(50) NOT NULL , `giaban` INT(15) NOT NULL , `hinhanh` VARCHAR(50) NOT NULL , `ngaydang` DATE NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
