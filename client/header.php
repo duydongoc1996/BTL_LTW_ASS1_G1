@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php session_start(); 
+    $localAddress = "/BTL_LTW_ASS1_G1";
+?>
+
 <!DOCTYPE html>
 <html lang="en">	
 	<head>
@@ -25,10 +28,10 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">                    
                     <li class="nav-item">
-                        <a class="nav-link" href="/ass2/index.php">Trang chu</a>
+                        <a class="nav-link" href="<?php echo $localAddress; ?>/index.php">Trang chu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Viet bai</a>
+                        <a class="nav-link" href="<?php echo $localAddress; ?>/client/vietbai.php">Viet bai</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Lien he</a>
@@ -37,7 +40,7 @@
                         <a class="nav-link" href="#">Thong tin</a>
                     </li>                    
                      <li class="nav-item">
-                        <a class="nav-link" href="/ass2/client/taikhoan.php">Tai khoan</a>
+                        <a class="nav-link" href="<?php echo $localAddress; ?>/client/taikhoan.php">Tai khoan</a>
                     </li>  
                      
                     
