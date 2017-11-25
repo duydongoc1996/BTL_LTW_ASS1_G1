@@ -18,8 +18,9 @@ function checkUsernameExist($listUser,$username) {
 }
 
 function signUp($username,$password,$repassword,$firstname,$lastname,$email) {
-	$GLOBALS['UserManager'];
-	if (checkUsernameExist($GLOBALS['UserManager']->getAllUser(),$username) == false && 	
+	$Manager = new UserManager();
+	//$GLOBALS['UserManager'];
+	if (checkUsernameExist($Manager->getAllUser(),$username) == false && 	
 		$password == $repassword && (filter_var($email, FILTER_VALIDATE_EMAIL))
 		) {
 		(new User($username,$password,$email,0,$firstname,$lastname))->insertUser();
@@ -35,9 +36,11 @@ function checkLogin($username,$password) {
 	} else {
 		return true;
 	}
-	
+}
 
-
+function newPost($tieude,$tacgia,$dientich,$diachi,$giaban,$mota,$ngaydang,$hinhanh) {
+	var_dump((new Post($tieude,$tacgia,$dientich,$mota,$diachi,$giaban,$hinhanh,$ngaydang))->insertPost()->id);
+	return true;
 }
 function Logout() {
 
@@ -50,6 +53,6 @@ function search($str){
 //var_dump(checkUsernameExist(($GLOBALS['UserManager']->getAllUser()),'aaaaa'));
 //$email = '1	  abc@gmail.com';
 //var_dump((checkLogin('a','b')));
- 
+ //var_dump(signUp('a','a','a','a','a','abc@gmail.com'));
 
 ?>

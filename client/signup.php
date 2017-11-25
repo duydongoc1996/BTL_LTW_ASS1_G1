@@ -15,12 +15,12 @@ if (
 		";   
 		//<script language='javascript' type='text/javascript'> location.href='dangnhap.php' </script>
 		else {
-			echo "Dang ki that bai! <br>
+			echo "Dang ki that bai! Error code = 1 <br>
 			Tro lai trang <a href='taikhoan.php'>Dang nhap</a> <br>
 			";		
 		}
 } else {
-	echo "Dang ki that bai! <br>
+	echo "Dang ki that bai! Error code = 2 <br>
 			Tro lai trang <a href='taikhoan.php'>Dang nhap</a> <br>
 			";	
 }

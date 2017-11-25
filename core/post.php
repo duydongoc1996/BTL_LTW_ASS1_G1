@@ -12,8 +12,8 @@ class Post {
 	public $hinhanh; //url
 	public $ngaydang;
 
-	public function __construct($ID,$TIEUDE,$TACGIA,$DIENTICH,$MOTA,$DIACHI,$GIABAN,$HINHANH,$NGAYDANG) {
-		$this->id=$ID;
+	public function __construct($TIEUDE,$TACGIA,$DIENTICH,$MOTA,$DIACHI,$GIABAN,$HINHANH,$NGAYDANG) {
+		//$this->id=$ID;
 		$this->tieude=$TIEUDE;
 		$this->tacgia=$TACGIA;
 		$this->dientich=$DIENTICH;
@@ -27,9 +27,12 @@ class Post {
 	public function insertPost(){
 		$connection = new Connection();
 
-		$sql = "INSERT INTO `post` (`id`,`tieude`,`tacgia`,`dientich`,`mota`,`diachi`,`giaban`,`hinhanh`,`ngaydang`) VALUES (NULL,'$this->tieude','$this->tactia','$this->dientich','$this->mota','$this->diachi','$this->giaban','$this->hinhanh','$this->ngaydang')";
-		if (mysqli_query($connection->con,$sql)===true) {
+		$sql = "INSERT INTO `post` (`id`,`tieude`,`tacgia`,`dientich`,`mota`,`diachi`,`giaban`,`hinhanh`,`ngaydang`) VALUES (NULL,'$this->tieude','$this->tacgia','$this->dientich','$this->mota','$this->diachi','$this->giaban','$this->hinhanh','$this->ngaydang')";		
+		if ($result = mysqli_query($connection->con,$sql)===true) {
 			//success
+			
+			
+			//echo $this->id;
 		} else {
 			//error
 		}
@@ -118,4 +121,6 @@ class PostManager {
 ///$PostManager = new PostManager();
 //$listPost = $PostManager->getAllPost();// array[Post] ex: $listPost[$index]->id ... $listPost[$index]->tieude
 //var_dump($listPost);
+
+
 ?>
