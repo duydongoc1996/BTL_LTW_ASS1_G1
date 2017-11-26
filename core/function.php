@@ -39,7 +39,7 @@ function checkLogin($username,$password) {
 }
 
 function newPost($tieude,$tacgia,$dientich,$diachi,$giaban,$mota,$ngaydang,$hinhanh) {
-	var_dump((new Post($tieude,$tacgia,$dientich,$mota,$diachi,$giaban,$hinhanh,$ngaydang))->insertPost()->id);
+	(new Post(null,$tieude,$tacgia,$dientich,$mota,$diachi,$giaban,$hinhanh,$ngaydang))->insertPost();
 	return true;
 }
 function Logout() {

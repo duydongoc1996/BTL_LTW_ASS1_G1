@@ -12,8 +12,8 @@ class Post {
 	public $hinhanh; //url
 	public $ngaydang;
 
-	public function __construct($TIEUDE,$TACGIA,$DIENTICH,$MOTA,$DIACHI,$GIABAN,$HINHANH,$NGAYDANG) {
-		//$this->id=$ID;
+	public function __construct($ID,$TIEUDE,$TACGIA,$DIENTICH,$MOTA,$DIACHI,$GIABAN,$HINHANH,$NGAYDANG) {
+		$this->id=$ID;
 		$this->tieude=$TIEUDE;
 		$this->tacgia=$TACGIA;
 		$this->dientich=$DIENTICH;

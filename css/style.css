@@ -1,5 +1,27 @@
 .footer {
     margin-top: 50px;
     height: 100px;
-    background-color: black;
+    background-color:#343A40;
+}
+.postComponent {
+
+}
+
+.postTitle {
+
+}
+
+.postImage {
+
+}
+
+.ImageComponent {
+    height: 150px;
+}
+.postArea {
+
+}
+
+.postPrice {
+
 }
