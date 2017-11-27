@@ -1,3 +1,11 @@
+body {
+    
+}
+a,a:hover {
+    text-decoration: none;
+    
+}
+
 .footer {
     margin-top: 50px;
     height: 100px;
@@ -24,4 +32,36 @@
 
 .postPrice {
 
+}
+
+.table-user {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+.table-td,.table-tr, {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.table-user .table-td {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(112, 150, 114);
+    color: white;
+}
+
+.button-edit {
+    color: yellow;
+}
+.button-delete {
+    color: rgb(219, 34, 34);
+}
+.button-delete:hover {
+    background-color: white;
+}
+.button-edit:hover {
+    background-color: blue;
 }

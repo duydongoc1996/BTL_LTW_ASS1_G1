@@ -38,8 +38,27 @@ class Post {
 		}
 		return $this;
 	}
-	public function changeInfo($type,$value) {
+	public function changeInfo($ID,$TIEUDE,$DIENTICH,$MOTA,$DIACHI,$GIABAN,$NGAYDANG) {
 		//database working
+		$connection = new Connection();
+		
+		$sql = "UPDATE `post` SET
+			`tieude`='$TIEUDE',
+			`dientich`='$DIENTICH',
+			`mota`='$MOTA',
+			`diachi`='$DIACHI',
+			`giaban`='$GIABAN',
+			`ngaydang`='$NGAYDANG'
+		WHERE `id`='$ID' ";
+		
+		if (mysqli_query($connection->con, $sql)===true) {
+			//echo "New record updated successfully";
+			return true;
+		} else {
+			//echo "Error: " . $sql . "<br>" . mysqli_error($connection->con);
+			return false;
+		}
+		
 	}
 }
 //Post Manager object
@@ -116,6 +135,31 @@ class PostManager {
 		}
 		return $this->listPost;
 	}
+
+	public function deletePost($id) {
+		//database working
+		$connection = new Connection();
+
+		$sql = "DELETE FROM `post` WHERE `id`='$id'";		
+		if (mysqli_query($connection->con, $sql)===true) {
+			//echo "Delete record successfully";
+			$index=0;
+			foreach ($this->listPost as $post) {
+				# code...				
+				if ($post->id == $id) {
+					$this->delPost($index);
+					break;
+				}
+				$index += 1;
+			}
+			return true;
+		} else {
+			echo "Error: " . $sql . "<br>" . mysqli_error($connection->con);
+			return false;
+		}
+		
+	}
+
 }
 //////////////Running/////////
 ///$PostManager = new PostManager();

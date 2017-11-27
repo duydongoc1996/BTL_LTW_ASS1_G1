@@ -3,7 +3,7 @@ include_once 'connect.php';
 
 //User object
 class User {
-//	public $id;
+	public $id;
 	public $username;
 	public $password;
 	public $email;
@@ -13,8 +13,8 @@ class User {
 
 	//public $connection;
 
-	public function __construct($USERNAME,$PASSWORD,$EMAIL,$SESSION,$FIRSTNAME,$LASTNAME) {
-		//$this->id=$ID;
+	public function __construct($ID,$USERNAME,$PASSWORD,$EMAIL,$SESSION,$FIRSTNAME,$LASTNAME) {
+		$this->id=$ID;
 		$this->username=$USERNAME;
 		$this->password=$PASSWORD;
 		$this->email=$EMAIL;
@@ -36,9 +36,28 @@ class User {
 		}
 		return $this;
 	}
+	
 
-	public function changeInfo($type,$value) {
+	public function changeInfo($ID,$USERNAME,$PASSWORD,$EMAIL,$FIRSTNAME,$LASTNAME) {
 		//database working
+		$connection = new Connection();
+		
+		$sql = "UPDATE `user` SET
+			`username`='$USERNAME',
+			`password`='$PASSWORD',
+			`email`='$EMAIL',
+			`firstname`='$FIRSTNAME',
+			`lastname`='$LASTNAME'
+		WHERE `id`='$ID' ";
+		
+		if (mysqli_query($connection->con, $sql)===true) {
+			//echo "New record updated successfully";
+			return true;
+		} else {
+			//echo "Error: " . $sql . "<br>" . mysqli_error($connection->con);
+			return false;
+		}
+		
 	}
 }
 
@@ -66,7 +85,7 @@ class UserManager {
 		if ($result->num_rows > 0) {
 		    // output data of each row
 		    while($row = $result->fetch_assoc()) {
-		        $user = new User($row['username'],$row['password'],$row['email'],$row['session'],$row['firstname'],$row['lastname']);
+		        $user = new User($row['id'],$row['username'],$row['password'],$row['email'],$row['session'],$row['firstname'],$row['lastname']);
 		       	//$this->addUser($user);
 		    }
 		    return $user;
@@ -74,10 +93,27 @@ class UserManager {
 		    //echo "0 results";
 		    return false;
 		}
+	}
 
 
+	public function getUserById($id) {
+		//database working
+		$connection = new Connection();
 
+		$sql = "SELECT * FROM `user` WHERE `id`='$id'";
+		$result = $connection->con->query($sql);	
 
+		if ($result->num_rows > 0) {
+		    // output data of each row
+		    while($row = $result->fetch_assoc()) {
+		        $user = new User($row['id'],$row['username'],$row['password'],$row['email'],$row['session'],$row['firstname'],$row['lastname']);
+		       	//$this->addUser($user);
+		    }
+		    return $user;
+		} else {
+		    //echo "0 results";
+		    return false;
+		}
 	}
 
 
@@ -91,7 +127,7 @@ class UserManager {
 		if ($result->num_rows > 0) {
 		    // output data of each row
 		    while($row = $result->fetch_assoc()) {
-		        $user = new User($row['username'],$row['password'],$row['email'],$row['session'],$row['firstname'],$row['lastname']);
+		        $user = new User($row['id'],$row['username'],$row['password'],$row['email'],$row['session'],$row['firstname'],$row['lastname']);
 		       	$this->addUser($user);
 
 
@@ -104,6 +140,32 @@ class UserManager {
 
 		return $this->listUser;
 	}	
+
+	public function deleteUser($id) {
+		//database working
+		$connection = new Connection();
+
+		$sql = "DELETE FROM `user` WHERE `id`='$id'";		
+		if (mysqli_query($connection->con, $sql)===true) {
+			//echo "Delete record successfully";
+			$index=0;
+			foreach ($this->listUser as $user) {
+				# code...				
+				if ($user->id == $id) {
+					$this->delUser($index);	
+					break;
+				}
+				$index += 1;
+			}
+			return true;
+		} else {
+			//echo "Error: " . $sql . "<br>" . mysqli_error($connection->con);
+			return false;
+		}
+		
+	}
+
+
 }
 
 

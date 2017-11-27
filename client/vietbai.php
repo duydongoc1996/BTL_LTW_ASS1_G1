@@ -20,10 +20,7 @@
                 <label for="tieude">Tieu de</label>
                 <input type="text" class="form-control" name="tieude">
             </div>
-            <div class="form-group">
-                <label for="tacgia">Tac gia</label>
-                <input type="text" class="form-control" name="tacgia">
-            </div>
+            
             <div class="form-group">
                 <label for="dientich">Dien tich</label>
                 <input type="text" class="form-control" name="dientich">
@@ -110,8 +107,7 @@
 
 
         //Call function
-        if (    isset($_POST['tieude']) &&
-                isset($_POST['tacgia']) &&
+        if (    isset($_POST['tieude']) &&               
                 isset($_POST['dientich']) &&
                 isset($_POST['diachi']) &&
                 isset($_POST['giaban']) &&
@@ -122,7 +118,7 @@
                 $isImageOk && 
                 (newPost(
                     $_POST['tieude'],
-                    $_POST['tacgia'],
+                    $_SESSION['username'],
                     $_POST['dientich'],
                     $_POST['diachi'],
                     $_POST['giaban'],

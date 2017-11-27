@@ -23,7 +23,7 @@ function signUp($username,$password,$repassword,$firstname,$lastname,$email) {
 	if (checkUsernameExist($Manager->getAllUser(),$username) == false && 	
 		$password == $repassword && (filter_var($email, FILTER_VALIDATE_EMAIL))
 		) {
-		(new User($username,$password,$email,0,$firstname,$lastname))->insertUser();
+		(new User(null,$username,$password,$email,0,$firstname,$lastname))->insertUser();
 		return true;		
 	} else return false;
 }
