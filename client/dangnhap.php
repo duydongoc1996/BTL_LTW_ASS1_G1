@@ -1,9 +1,10 @@
 <?php include "header.php"; include dirname(__FILE__)."/../core/function.php"; ?>    
-    
-    <div class="container-fluid">
+
+
+    <div class="container-fluid" style="width: 40%" >
     	<hr>
-    	<h2>Dang nhap de tiep tuc</h2>
-    	<form method="post" action="dangnhap.php">    	  	
+    	<h2>Đăng nhập để tiếp tục</h2>
+    	<form id= "contain" method="post" action="dangnhap.php">    	  	
 		  	<div class="form-group">
 		    	<label for="username">Username:</label>
 		    	<input type="text" class="form-control" name="username">
@@ -13,13 +14,13 @@
 		    	<input type="password" class="form-control" name="password">
 		  	</div>
 		  	<div class="form-check">
-		  		<button type="submit" class="btn btn-primary">Dang nhap</button>
+		  		<button type="submit" class="btn btn-primary">Đăng nhập</button>
 		    	<label class="form-check-label">
-		      	<input class="form-check-input" type="checkbox"> Duy tri dang nhap
+		      	<input class="form-check-input" type="checkbox"> Duy trì đăng nhập
 		    	</label>
 		  	</div>	  	
 		</form>
-		<span>Neu chua co tai khoan, xin vui long <a href="dangki.php">Dang ki</a></span>
+		<span>Nếu chưa có tài khoản, xin vui lòng <a href="dangki.php">Đăng kí</a></span>
 	</div>  
 
 	<?php  
