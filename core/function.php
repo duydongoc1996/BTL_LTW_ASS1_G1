@@ -30,12 +30,16 @@ function signUp($username,$password,$repassword,$firstname,$lastname,$email) {
 
 function checkLogin($username,$password) {
 	$Manager = new UserManager();
+	$admin = $Manager->getAdmin($username,$password);
+	if($admin==true) return true;
+	else {
 	$res = $Manager->getUser($username,$password);
 	if ($res==false) {
 		return false;
 	} else {
 		return true;
 	}
+}
 }
 
 function newPost($tieude,$tacgia,$dientich,$diachi,$giaban,$mota,$ngaydang,$hinhanh) {

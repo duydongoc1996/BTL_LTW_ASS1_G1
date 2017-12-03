@@ -17,7 +17,7 @@
 	<body>
         <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top	">
             <!-- Brand -->
-            <a class="navbar-brand" href="#"><h1>BatDongSan</h1></a>
+            <a class="navbar-brand" href="../index.php"><h1>BatDongSan</h1></a>
 
             <!-- Toggler/collapsibe Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -44,3 +44,13 @@
                 
             </div>
         </nav> 
+
+
+
+
+            <div class="container-fluid">
+        <form action="../client/taikhoan.php" method="post">
+            <input class='btn btn-danger' type="submit" name="logout" value="Log out">
+        </form>
+    </div>
+  

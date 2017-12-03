@@ -1,4 +1,8 @@
-<?php session_start(); 
+<?php 
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
     $localAddress = "/ass2/BTL_LTW_ASS1_G1";
 ?>
 

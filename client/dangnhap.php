@@ -27,6 +27,12 @@
 		if (isset($_POST['username']) && isset($_POST['password'])) {
 			if ((checkLogin($_POST['username'],$_POST['password']))==true) {
 				$_SESSION['username'] = $_POST['username'];
+				$_SESSION['password'] = $_POST['password'];
+				if ($_POST['username'] == 'admin' && $_POST['password'] == '123456')
+				echo "<script language='javascript' type='text/javascript'>location.href='../admin/header.php'</script>";
+			 	else if ($_POST['username'] == 'ad' && $_POST['password'] == '123456')
+				echo "<script language='javascript' type='text/javascript'>location.href='../admin/header.php'</script>";
+				else
 				echo "<script language='javascript' type='text/javascript'>location.href='taikhoan.php'</script>";
 				//echo "<script language='javascript' type='text/javascript'>alert('Thanh cong');</script>";
 			} else {

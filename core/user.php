@@ -1,6 +1,5 @@
 <?php
 include_once 'connect.php';
-
 //User object
 class User {
 	public $id;
@@ -59,6 +58,45 @@ class User {
 		}
 		
 	}
+
+	public function changePass($ID,$PASSWORD) {
+		//database working
+		$connection = new Connection();
+		
+		$sql = "UPDATE `user` SET
+			`password`='$PASSWORD'
+		WHERE `id`='$ID' ";
+		
+		if (mysqli_query($connection->con, $sql)===true) {
+			//echo "New record updated successfully";
+			return true;
+		} else {
+			//echo "Error: " . $sql . "<br>" . mysqli_error($connection->con);
+			return false;
+		}
+		
+	}
+
+public function changePrivate($ID,$EMAIL,$FIRSTNAME,$LASTNAME) {
+		//database working
+		$connection = new Connection();
+		
+		$sql = "UPDATE `user` SET
+			`email`='$EMAIL',
+			`firstname`='$FIRSTNAME',
+			`lastname`='$LASTNAME'
+		WHERE `id`='$ID' ";
+		
+		if (mysqli_query($connection->con, $sql)===true) {
+			//echo "New record updated successfully";
+			return true;
+		} else {
+			//echo "Error: " . $sql . "<br>" . mysqli_error($connection->con);
+			return false;
+		}
+		
+	}
+
 }
 
 class UserManager {
@@ -86,6 +124,8 @@ class UserManager {
 		    // output data of each row
 		    while($row = $result->fetch_assoc()) {
 		        $user = new User($row['id'],$row['username'],$row['password'],$row['email'],$row['session'],$row['firstname'],$row['lastname']);
+		        $_SESSION['id'] = $row['id'];
+		        $GLOBALS['gl'] = $row['id'];
 		       	//$this->addUser($user);
 		    }
 		    return $user;
@@ -93,6 +133,24 @@ class UserManager {
 		    //echo "0 results";
 		    return false;
 		}
+	}
+
+
+	public function getAdmin($username, $password) {
+		$connection = new Connection();
+
+		$sql = "SELECT * FROM `user` WHERE `username`='$username' AND `password`='$password'";
+		$result = $connection->con->query($sql);	
+
+	
+
+		if ($result->num_rows > 0) {
+			if ($username == 'admin' && $password == '123456') return true;
+			if ($username == 'ad' && $password == '123456') return true;
+		}
+		else
+			 return false;
+		 
 	}
 
 

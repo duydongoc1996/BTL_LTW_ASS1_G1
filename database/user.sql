@@ -6,3 +6,7 @@ CREATE TABLE `ass2_ltw`.`user` (
     `session` INT(1) NOT NULL , 
     `firstname` VARCHAR(50) NOT NULL , 
     `lastname` VARCHAR(50) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+	
+	INSERT INTO `user` (`id`, `username`, `password`, `email`, `session`, `firstname`, `lastname`) VALUES
+(1, 'admin', '123456', '', '', '', ''),
+(2, 'ad', '123456', '', '', '', '');
