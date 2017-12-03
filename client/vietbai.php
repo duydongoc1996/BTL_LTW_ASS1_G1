@@ -14,41 +14,41 @@
     ?>
 
 
-    <div class="container-fluid">
+    <div class="container-fluid" style="width: 50%">
     	<form action="vietbai.php" method="post" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="tieude">Tieu de</label>
+                <label for="tieude">Tiêu đề</label>
                 <input type="text" class="form-control" name="tieude">
             </div>
             
             <div class="form-group">
-                <label for="dientich">Dien tich</label>
+                <label for="dientich">Diện tích</label>
                 <input type="text" class="form-control" name="dientich">
             </div>
             <div class="form-group">
-                <label for="diachi">Dia chi</label>
+                <label for="diachi">Địa chỉ</label>
                 <input type="text" class="form-control" name="diachi">
             </div>
             <div class="form-group">
-                <label for="giaban">Gia ban</label>
+                <label for="giaban">Giá bán</label>
                 <input type="text" class="form-control" name="giaban">
             </div>
             <div class="form-group">
-                <label for="mota">Mo ta</label>
+                <label for="mota">Mô tả</label>
                 <!--input type="text" class="form-control" name="mota"-->
                 <textarea name="mota" rows="7" class="form-control"></textarea>
             </div>
             <div class="form-group">
-                <label for="ngaydang">Ngay dang</label>
+                <label for="ngaydang">Ngày đăng</label>
                 <input type="date" class="form-control" name="ngaydang">
             </div>
             <div class="form-group">
-                <label for="hinhanh">Hinh anh</label>
+                <label for="hinhanh">Hình ảnh</label>
                 <input type="file" class="form-control" name="hinhanh">
             </div>
 
 
-    		<input class='btn btn-info' type="submit" name="submit" value="Dang bai">
+    		<input class='btn btn-info' type="submit" name="submit" value="Đăng bài">
     	</form>
 	</div>
 
@@ -127,9 +127,9 @@
                     $target_file
                 ))
             ) {
-                echo "<script language='javascript' type='text/javascript'>alert('Dang bai thanh cong!');</script>";
+                echo "<script language='javascript' type='text/javascript'>alert('Đăng bài thành công');</script>";
             } else {
-                echo "<script language='javascript' type='text/javascript'>alert('Dang bai khong thanh cong!');</script>";
+                echo "<script language='javascript' type='text/javascript'>alert('Đăng bài không thành công!');</script>";
             }
         }
 

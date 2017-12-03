@@ -1,5 +1,7 @@
 body {
-    
+    background: #c8e1f5 !important;
+    margin: auto;
+    width: 80%;
 }
 a,a:hover {
     text-decoration: none;
@@ -65,3 +67,44 @@ a,a:hover {
 .button-edit:hover {
     background-color: blue;
 }
+
+
+
+
+div#hr {
+    border-radius:5px 5px 5px 5px;
+    margin-top:50px;
+    width:100%;
+    height:50px;
+    background:#2140fb;
+    clear:both;
+    line-height:30px;
+    font-size:18px;
+    font-weight:900;
+    color:#fff;
+    padding-left: 2%;
+}
+div#ha {
+    width:100%;
+    border:2px solid #2140fb;
+    overflow:hidden;
+    height:125px;
+}
+div#ha ul {
+    margin-left:-40px;
+    margin-top:0px;
+    overflow:hidden;
+}
+div#ha ul li {
+    width:200px;
+    list-style:none;
+    float:left;
+}
+div#hr a#pre, div#hr a#next {
+    float:right;
+    display:block;
+    cursor:pointer;
+}
+
+
+

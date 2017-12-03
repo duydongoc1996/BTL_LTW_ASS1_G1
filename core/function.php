@@ -29,14 +29,26 @@ function signUp($username,$password,$repassword,$firstname,$lastname,$email) {
 }
 
 function checkLogin($username,$password) {
-	$Manager = new UserManager();
+	$Manager = new UserManager();	
 	$res = $Manager->getUser($username,$password);
+	if ($res==false) {
+		return false;
+	} else {
+		return $res;
+	}
+}
+
+function checkLoginAdmin($username,$password) {
+	$Manager = new UserManager();	
+	$res = $Manager->getAdmin($username,$password);
 	if ($res==false) {
 		return false;
 	} else {
 		return true;
 	}
 }
+
+
 
 function newPost($tieude,$tacgia,$dientich,$diachi,$giaban,$mota,$ngaydang,$hinhanh) {
 	(new Post(null,$tieude,$tacgia,$dientich,$mota,$diachi,$giaban,$hinhanh,$ngaydang))->insertPost();

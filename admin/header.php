@@ -1,4 +1,8 @@
-<?php session_start(); 
+<?php 
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
     $localAddress = "/ass2/BTL_LTW_ASS1_G1";
 ?>
 
@@ -17,7 +21,7 @@
 	<body>
         <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top	">
             <!-- Brand -->
-            <a class="navbar-brand" href="#"><h1>BatDongSan</h1></a>
+            <a class="navbar-brand" href="../index.php"><h1>BatDongSan</h1></a>
 
             <!-- Toggler/collapsibe Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -28,7 +32,7 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">                    
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $localAddress; ?>/admin/index.php">Quan ly</a>
+                        <a class="nav-link" href="<?php echo $localAddress; ?>/admin/trangchu.php">Quan ly</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo $localAddress; ?>/admin/usermanage.php">Tai khoan</a>
@@ -44,3 +48,5 @@
                 
             </div>
         </nav> 
+
+
