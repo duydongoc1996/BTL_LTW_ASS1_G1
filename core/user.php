@@ -137,17 +137,9 @@ class UserManager {
 
 
 	public function getAdmin($username, $password) {
-		$connection = new Connection();
 
-		$sql = "SELECT * FROM `user` WHERE `username`='$username' AND `password`='$password'";
-		$result = $connection->con->query($sql);	
-
-	
-
-		if ($result->num_rows > 0) {
-			if ($username == 'admin' && $password == '123456') return true;
-			if ($username == 'ad' && $password == '123456') return true;
-		}
+		if ($username == 'admin' && $password == '123456') return true;
+		else if ($username == 'ad' && $password == '123456') return true;		
 		else
 			 return false;
 		 

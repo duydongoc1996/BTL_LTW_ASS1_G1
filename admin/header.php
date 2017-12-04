@@ -1,4 +1,8 @@
-<?php session_start(); 
+<?php 
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
     $localAddress = "/ass2/BTL_LTW_ASS1_G1";
 ?>
 
@@ -28,7 +32,7 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">                    
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $localAddress; ?>/admin/index.php">Quan ly</a>
+                        <a class="nav-link" href="<?php echo $localAddress; ?>/admin/trangchu.php">Quan ly</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo $localAddress; ?>/admin/usermanage.php">Tai khoan</a>
@@ -46,11 +50,3 @@
         </nav> 
 
 
-
-
-            <div class="container-fluid">
-        <form action="../client/taikhoan.php" method="post">
-            <input class='btn btn-danger' type="submit" name="logout" value="Log out">
-        </form>
-    </div>
-  

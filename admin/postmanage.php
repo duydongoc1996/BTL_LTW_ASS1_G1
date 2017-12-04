@@ -1,6 +1,14 @@
 <?php 
     include_once "header.php"; 
     include dirname(__FILE__)."/../core/function.php";
+
+    if (!isset($_SESSION['usernameadmin'])) {
+        echo "<script language='javascript' type='text/javascript'>location.href='dangnhap.php'</script>";
+    } else if (isset($_POST['logout'])) {
+        session_destroy();
+        echo "<script language='javascript' type='text/javascript'>location.href='dangnhap.php'</script>";
+    } 
+
 ?>
 <div class="container-fluid">
     <?php 

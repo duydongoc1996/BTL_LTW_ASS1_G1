@@ -25,11 +25,11 @@
 
 	<?php  
 		if (isset($_POST['username']) && isset($_POST['password'])) {
-			if ((checkLogin($_POST['username'],$_POST['password']))==true) {
-				$_SESSION['username'] = $_POST['username'];
+			if ((checkLoginAdmin($_POST['username'],$_POST['password']))==true) {
+				$_SESSION['usernameadmin'] = $_POST['username'];
 				
 				
-				echo "<script language='javascript' type='text/javascript'>location.href='taikhoan.php'</script>";
+				echo "<script language='javascript' type='text/javascript'>location.href='trangchu.php'</script>";
 				//echo "<script language='javascript' type='text/javascript'>alert('Thanh cong');</script>";
 			} else {
 				echo "<script language='javascript' type='text/javascript'>alert('Sai username/password');</script>";

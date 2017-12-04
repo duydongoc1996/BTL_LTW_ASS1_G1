@@ -1,0 +1,73 @@
+#listch{
+margin-left: 420px;
+background:#0066cc;
+width: 30%;
+padding-left: 50px;
+margin-top: 20px;
+color:#ff9900;
+padding-top: 5px;
+padding-bottom: 5px; 
+border-radius:10px 10px 10px 10px;
+}
+#listhoidap{
+margin-left: 420px;
+background:#0066cc;
+width: 14%;
+padding-left: 24px;
+padding-top: 5px;
+padding-bottom: 5px;  
+margin-top: 20px;
+color:#ff9900;
+border-radius:10px 10px 10px 10px;
+}
+.sub{
+width:100px;
+height:30px;
+font-weight:900;
+color:#0066ff;
+}
+div#listquestion{
+border:2px solid #0066ff;
+width:650px;
+margin:10px auto;
+border-radius:10px;
+padding:10px;
+}
+div#listquestion div.question{
+font-size: 20px;
+padding-left: 20px; 
+color:#0099ff;
+}
+div#listquestion i{
+	font-size:25px;
+	font-weight:900;
+	color:red;
+}
+span.reply{
+	font-size:22px;
+	font-weight:bold;
+	color:#0000ff;
+}
+#hoi {
+	font-size: 18px;
+	font-weight: bold;
+}
+div#listquestion div#listreply{
+	border:1px solid #0066ff;
+	padding:8px;
+	margin-left:30px;
+	border-radius:10px;
+	margin:10px;
+}
+div#listquestion div#listreply h3{
+	font-size:22px;
+	font-weight:bold;
+	color:#0000ff;
+}
+div#listquestion div#listreply h5{
+	color:#0099ff;
+}
+div#listquestion  div.reply input.re{
+	width:255px;
+	font-size:18px;
+}

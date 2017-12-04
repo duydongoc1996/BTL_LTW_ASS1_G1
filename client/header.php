@@ -75,7 +75,7 @@
                         <a class="nav-link" href="<?php echo $localAddress; ?>/client/vietbai.php">Viết bài</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Liên hệ</a>
+                        <a class="nav-link" href="<?php echo $localAddress; ?>/client/datcauhoi.php">Đặt câu hỏi</a>
                     </li>   
                     <li class="nav-item">
                         <a class="nav-link" href="#">Thông tin</a>
