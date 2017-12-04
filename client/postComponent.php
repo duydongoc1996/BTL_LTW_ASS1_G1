@@ -1,5 +1,5 @@
 <style>
-<?php include 'css/style.css'; ?>
+<?php //include 'css/style.css'; ?>
 </style>
 
 
@@ -60,7 +60,7 @@ $listPost = $Manager->getAllPost();
         echo "
         <div class='postComponent'>
             <div class='postTitle'>
-                <h2><a href='postDetail.php?".$post->id."'>".$post->tieude."</a></h2>
+                <h2><a href='client/postDetail.php?id=".$post->id."'>".$post->tieude."</a></h2>
             </div>            
             <div class='postImage'>
                 <img class='ImageComponent' src='"."client/".$post->hinhanh."' alt='image'/>
